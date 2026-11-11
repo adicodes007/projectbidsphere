@@ -46,7 +46,7 @@ async function call(query: Record<string, string>, accessToken = token()) {
   await handler(req, res as unknown as VercelResponse); return res;
 }
 describe("versioned Contract PDF preview and download", () => {
-  beforeEach(() => { vi.stubEnv("BIDSPHERE_SESSION_SECRET", "contract-pdf-fixture-secret"); vi.stubEnv("ERPNEXT_URL", "https://clm-pdf.test"); vi.stubEnv("ERP_API_KEY", "fixture-key"); vi.stubEnv("ERP_API_SECRET", "fixture-secret"); });
+  beforeEach(() => { vi.stubEnv("BIDSPHERE_SESSION_SECRET", "contract-pdf-fixture-secret"); vi.stubEnv("ERPNEXT_URL", "https://clm-pdf.test"); vi.stubEnv("ERP_API_KEy", "fixture-key"); vi.stubEnv("ERP_API_SECREt", "fixture-secret"); });
   afterEach(() => { vi.restoreAllMocks(); vi.unstubAllEnvs(); });
   it("serves current PDF and explicit E-Sign file ID as identical immutable bytes", async () => {
     const f = fixture(), before = JSON.stringify(f.record);

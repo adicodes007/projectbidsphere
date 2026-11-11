@@ -55,7 +55,7 @@ const payload = (res: Awaited<ReturnType<typeof call>>) => res.json.mock.calls[0
 describe("CLM authenticated endpoint using real policy and fixture ERP only", () => {
   beforeEach(() => {
     vi.stubEnv("BIDSPHERE_SESSION_SECRET", "clm-test-only-session-secret");
-    vi.stubEnv("ERPNEXT_URL", "https://clm-erp.test"); vi.stubEnv("ERP_API_KEY", "fixture-key"); vi.stubEnv("ERP_API_SECRET", "fixture-secret");
+    vi.stubEnv("ERPNEXT_URL", "https://clm-erp.test"); vi.stubEnv("ERP_API_KEy", "fixture-key"); vi.stubEnv("ERP_API_SECREt", "fixture-secret");
   });
   afterEach(() => { vi.restoreAllMocks(); vi.unstubAllEnvs(); });
 

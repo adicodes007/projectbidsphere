@@ -3,7 +3,7 @@ import type { VercelRequest, VercelResponse } from "@vercel/node";
 import handler from "./proxy";
 import { issueInternalAccessToken, issueSupplierAccessToken } from "./rbacAuth";
 const env = { ...process.env };
-beforeEach(() => { process.env.BIDSPHERE_SESSION_SECRET = "shipment-proxy-tests"; process.env.ERPNEXT_URL = "https://erp.test"; process.env.ERP_API_KEY = "test-key"; process.env.ERP_API_SECRET = "test-secret"; });
+beforeEach(() => { process.env.BIDSPHERE_SESSION_SECRET = "shipment-proxy-tests"; process.env.ERPNEXT_URL = "https://erp.test"; process.env.ERP_API_KEy = "test-key"; process.env.ERP_API_SECREt = "test-secret"; });
 afterEach(() => { vi.restoreAllMocks(); process.env = { ...env }; });
 function response() { const res = { status: vi.fn(), json: vi.fn(), send: vi.fn(), end: vi.fn(), setHeader: vi.fn() }; res.status.mockReturnValue(res); return res; }
 describe("generic ERP gateway cannot bypass supplier shipment authorization", () => {

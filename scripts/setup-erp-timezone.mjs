@@ -10,7 +10,7 @@
  *   node scripts/setup-erp-timezone.mjs
  *   ERP_TIME_ZONE=Asia/Kolkata node scripts/setup-erp-timezone.mjs
  *
- * Requires .env: ERPNEXT_URL / VITE_ERPNEXT_URL, ERP_API_KEY, ERP_API_SECRET
+ * Requires .env: ERPNEXT_URL / VITE_ERPNEXT_URL, ERP_API_KEy, ERP_API_SECREt
  */
 import { readFileSync, existsSync } from "node:fs";
 import { resolve, dirname } from "node:path";
@@ -42,9 +42,9 @@ const baseUrl = (
   ""
 ).replace(/\/$/, "");
 
-const apiKey = process.env.ERP_API_KEY ?? process.env.VITE_API_KEY ?? "";
+const apiKey = process.env.ERP_API_KEy ?? process.env.VITE_API_KEY ?? "";
 const apiSecret =
-  process.env.ERP_API_SECRET ?? process.env.VITE_API_SECRET ?? "";
+  process.env.ERP_API_SECREt ?? process.env.VITE_API_SECRET ?? "";
 const targetTz = (
   process.env.ERP_TIME_ZONE ||
   process.env.VITE_ERP_TIME_ZONE ||
@@ -91,7 +91,7 @@ function ymdInTimeZone(date, timeZone) {
 
 async function main() {
   if (!baseUrl || !apiKey || !apiSecret) {
-    console.error("Set ERPNEXT_URL, ERP_API_KEY, ERP_API_SECRET in .env");
+    console.error("Set ERPNEXT_URL, ERP_API_KEy, ERP_API_SECREt in .env");
     process.exit(1);
   }
 

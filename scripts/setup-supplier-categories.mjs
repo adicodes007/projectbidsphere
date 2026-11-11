@@ -4,7 +4,7 @@
  * This is a data/setup script (no API changes). The UI maps Category ↔ supplier_group.
  *
  * Usage: node scripts/setup-supplier-categories.mjs
- * Requires .env: ERPNEXT_URL (or VITE_ERPNEXT_URL), ERP_API_KEY, ERP_API_SECRET
+ * Requires .env: ERPNEXT_URL (or VITE_ERPNEXT_URL), ERP_API_KEy, ERP_API_SECREt
  */
 import { readFileSync, existsSync } from "node:fs";
 import { resolve, dirname } from "node:path";
@@ -35,9 +35,9 @@ const baseUrl = (
   process.env.VITE_PROXY_TARGET ??
   ""
 ).replace(/\/+$/, "");
-const apiKey = process.env.ERP_API_KEY ?? process.env.VITE_API_KEY ?? "";
+const apiKey = process.env.ERP_API_KEy ?? process.env.VITE_API_KEY ?? "";
 const apiSecret =
-  process.env.ERP_API_SECRET ?? process.env.VITE_API_SECRET ?? "";
+  process.env.ERP_API_SECREt ?? process.env.VITE_API_SECRET ?? "";
 
 async function api(method, path, body) {
   const url = `${baseUrl}${path}`;
@@ -197,7 +197,7 @@ async function assignDemoSuppliers() {
 
 async function main() {
   if (!baseUrl || !apiKey || !apiSecret) {
-    console.error("Set ERPNEXT_URL, ERP_API_KEY, ERP_API_SECRET in .env");
+    console.error("Set ERPNEXT_URL, ERP_API_KEy, ERP_API_SECREt in .env");
     process.exit(1);
   }
   await ensureCategoryGroups();

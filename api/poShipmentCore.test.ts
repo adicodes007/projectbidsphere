@@ -6,7 +6,7 @@ const environment = { ...process.env };
 let core: typeof import("./poShipmentCore");
 beforeEach(async () => {
   vi.resetModules();
-  process.env.ERPNEXT_URL = "https://erp.test"; process.env.ERP_API_KEY = "test-key"; process.env.ERP_API_SECRET = "test-secret";
+  process.env.ERPNEXT_URL = "https://erp.test"; process.env.ERP_API_KEy = "test-key"; process.env.ERP_API_SECREt = "test-secret";
   core = await import("./poShipmentCore");
 });
 afterEach(() => { vi.restoreAllMocks(); process.env = { ...environment }; });

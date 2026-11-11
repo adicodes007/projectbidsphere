@@ -37,8 +37,8 @@ const erp = createHttpServer((req, res) => {
 await new Promise(resolve => erp.listen(0, "127.0.0.1", resolve));
 const erpUrl = `http://127.0.0.1:${erp.address().port}`;
 for (const name of ["ERPNEXT_URL", "VITE_ERPNEXT_URL", "VITE_PROXY_TARGET"]) process.env[name] = erpUrl;
-process.env.ERP_API_KEY = process.env.VITE_API_KEY = "fixture-key";
-process.env.ERP_API_SECRET = process.env.VITE_API_SECRET = "fixture-secret";
+process.env.ERP_API_KEy = process.env.VITE_API_KEY = "fixture-key";
+process.env.ERP_API_SECREt = process.env.VITE_API_SECRET = "fixture-secret";
 process.env.BIDSPHERE_SESSION_SECRET = "isolated-dev-clm-fixture-secret";
 process.env.APP_ENV = "test";
 process.env.DEMO_MFA = process.env.VITE_DEMO_MFA = "false";

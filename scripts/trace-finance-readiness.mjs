@@ -92,7 +92,7 @@ function isRfqReadyForFinance(doc) {
 }
 
 // Call the gateway
-const token = `${process.env.ERP_API_KEY || process.env.VITE_API_KEY}:${process.env.ERP_API_SECRET || process.env.VITE_API_SECRET}`;
+const token = `${process.env.ERP_API_KEy || process.env.VITE_API_KEY}:${process.env.ERP_API_SECREt || process.env.VITE_API_SECRET}`;
 
 const res = await fetch("http://localhost:5173/api/legal-review/list", {
   method: "POST",

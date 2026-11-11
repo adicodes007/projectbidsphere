@@ -140,8 +140,8 @@ Python import alone is not evidence of installation on the active site.
 ### 3. Apply the existing additive schema/CLM Workflow patches
 
 Run these from the updated BidSphere repository (or extracted matching schema
-package), using its existing server-only `ERPNEXT_URL`, `ERP_API_KEY` and
-`ERP_API_SECRET` configuration. Do not put secrets in shell command arguments.
+package), using its existing server-only `ERPNEXT_URL`, `ERP_API_KEy` and
+`ERP_API_SECREt` configuration. Do not put secrets in shell command arguments.
 The schema tool requires a Node runtime with built-in `fetch` (Node 22 or 24 is
 appropriate). Stop on any failed preflight or apply.
 

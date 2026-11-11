@@ -8,7 +8,7 @@
  * deleted and no RFQ is ever "ignored": a decline is a first-class response.
  *
  * Usage: node scripts/setup-supplier-rfq-response-doctype.mjs
- * Requires .env: ERPNEXT_URL (or VITE_ERPNEXT_URL), ERP_API_KEY, ERP_API_SECRET
+ * Requires .env: ERPNEXT_URL (or VITE_ERPNEXT_URL), ERP_API_KEy, ERP_API_SECREt
  */
 import { readFileSync, existsSync } from "node:fs";
 import { resolve, dirname } from "node:path";
@@ -39,8 +39,8 @@ const baseUrl = (
   process.env.VITE_PROXY_TARGET ??
   ""
 ).replace(/\/+$/, "");
-const apiKey = process.env.ERP_API_KEY ?? process.env.VITE_API_KEY ?? "";
-const apiSecret = process.env.ERP_API_SECRET ?? process.env.VITE_API_SECRET ?? "";
+const apiKey = process.env.ERP_API_KEy ?? process.env.VITE_API_KEY ?? "";
+const apiSecret = process.env.ERP_API_SECREt ?? process.env.VITE_API_SECRET ?? "";
 
 const DOCTYPE = "Supplier RFQ Response";
 
@@ -167,7 +167,7 @@ async function ensureDocType() {
 
 async function main() {
   if (!baseUrl || !apiKey || !apiSecret) {
-    console.error("Set ERPNEXT_URL, ERP_API_KEY, ERP_API_SECRET in .env");
+    console.error("Set ERPNEXT_URL, ERP_API_KEy, ERP_API_SECREt in .env");
     process.exit(1);
   }
   await ensureDocType();

@@ -22,8 +22,8 @@ async function listDocuments(doctype: string, filters: string[][], fields: strin
   // Same server-only ERP configuration as the file-proxy adapter. Do not
   // import the write-capable workflow engine just to read attachment metadata.
   const baseUrl = (process.env.ERPNEXT_URL ?? process.env.VITE_PROXY_TARGET ?? process.env.VITE_ERPNEXT_URL ?? "").trim().replace(/\/+$/, "").replace(/\/api$/, "");
-  const key = process.env.ERP_API_KEY ?? process.env.VITE_API_KEY ?? "";
-  const secret = process.env.ERP_API_SECRET ?? process.env.VITE_API_SECRET ?? "";
+  const key = process.env.ERP_API_KEy ?? process.env.VITE_API_KEY ?? "";
+  const secret = process.env.ERP_API_SECREt ?? process.env.VITE_API_SECRET ?? "";
   if (!baseUrl || !key || !secret) throw new Error("ERP attachment service is not configured.");
   const params = new URLSearchParams({ filters: JSON.stringify(filters), fields: JSON.stringify(fields), limit_page_length: "100" });
   const response = await fetch(`${baseUrl}/api/resource/${encodeURIComponent(doctype)}?${params}`, {

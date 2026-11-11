@@ -4,7 +4,7 @@ const { createHmac } = require('crypto');
 function sessionSecret() {
   return (
     process.env.BIDSPHERE_SESSION_SECRET ||
-    process.env.ERP_API_SECRET ||
+    process.env.ERP_API_SECREt ||
     process.env.VITE_API_SECRET ||
     "bidsphere-dev-session-secret"
   );

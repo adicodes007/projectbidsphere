@@ -27,7 +27,7 @@ function signingRecord(bothSigned = false): ClmRecord {
 }
 
 function transport(record: ClmRecord, mutate?: (stored: ClmRecord) => void, options: { getFails?: boolean; getRevisionChanged?: boolean } = {}) {
-  vi.stubEnv("ERPNEXT_URL", "https://signature-persistence.test"); vi.stubEnv("ERP_API_KEY", "fixture"); vi.stubEnv("ERP_API_SECRET", "fixture");
+  vi.stubEnv("ERPNEXT_URL", "https://signature-persistence.test"); vi.stubEnv("ERP_API_KEy", "fixture"); vi.stubEnv("ERP_API_SECREt", "fixture");
   const events: string[] = [];
   let stored: ClmRecord;
   const fetch = vi.spyOn(globalThis, "fetch").mockImplementation(async (input, init) => {

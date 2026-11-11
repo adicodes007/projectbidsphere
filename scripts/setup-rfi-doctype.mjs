@@ -10,7 +10,7 @@
  *   - bidsphere_get_supplier_rfi   → load one RFI with invitation permission check
  *
  * Usage: node scripts/setup-rfi-doctype.mjs
- * Requires .env: ERPNEXT_URL / VITE_ERPNEXT_URL, ERP_API_KEY, ERP_API_SECRET
+ * Requires .env: ERPNEXT_URL / VITE_ERPNEXT_URL, ERP_API_KEy, ERP_API_SECREt
  * Server Scripts must be enabled: bench --site <site> set-config server_script_enabled 1
  */
 import { readFileSync, existsSync } from "node:fs";
@@ -42,11 +42,11 @@ const baseUrl = (
   process.env.VITE_PROXY_TARGET ??
   ""
 ).replace(/\/+$/, "");
-const apiKey = process.env.ERP_API_KEY ?? process.env.VITE_API_KEY ?? "";
-const apiSecret = process.env.ERP_API_SECRET ?? process.env.VITE_API_SECRET ?? "";
+const apiKey = process.env.ERP_API_KEy ?? process.env.VITE_API_KEY ?? "";
+const apiSecret = process.env.ERP_API_SECREt ?? process.env.VITE_API_SECRET ?? "";
 
 if (!baseUrl || !apiKey || !apiSecret) {
-  console.error("Missing ERPNEXT_URL / ERP_API_KEY / ERP_API_SECRET");
+  console.error("Missing ERPNEXT_URL / ERP_API_KEy / ERP_API_SECREt");
   process.exit(1);
 }
 

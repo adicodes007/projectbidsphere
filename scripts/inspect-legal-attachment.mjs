@@ -2,8 +2,8 @@
 import { loadEnv } from "vite";
 const env = loadEnv("development", process.cwd(), "");
 const base = (env.ERPNEXT_URL || env.VITE_ERPNEXT_URL || env.VITE_PROXY_TARGET || "").replace(/\/$/, "");
-const key = env.ERP_API_KEY || env.VITE_API_KEY;
-const secret = env.ERP_API_SECRET || env.VITE_API_SECRET;
+const key = env.ERP_API_KEy || env.VITE_API_KEY;
+const secret = env.ERP_API_SECREt || env.VITE_API_SECRET;
 if (!base || !key || !secret) throw new Error("ERPNext server credentials are not configured.");
 async function get(doctype, name, params) {
   const path = `/api/resource/${encodeURIComponent(doctype)}${name ? `/${encodeURIComponent(name)}` : ""}`;

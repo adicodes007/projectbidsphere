@@ -76,8 +76,8 @@ describe("authenticated RFP response preview/download endpoint (fixture ERP only
   beforeEach(() => {
     vi.stubEnv("BIDSPHERE_SESSION_SECRET", "rfp-file-test-only-secret");
     vi.stubEnv("ERPNEXT_URL", "https://erp.test");
-    vi.stubEnv("ERP_API_KEY", "test-key");
-    vi.stubEnv("ERP_API_SECRET", "test-secret");
+    vi.stubEnv("ERP_API_KEy", "test-key");
+    vi.stubEnv("ERP_API_SECREt", "test-secret");
   });
   afterEach(() => { vi.restoreAllMocks(); vi.unstubAllEnvs(); });
 

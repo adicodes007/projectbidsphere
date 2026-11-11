@@ -22,8 +22,8 @@ function loadEnv() {
 loadEnv();
 
 const BASE = (process.env.ERPNEXT_URL || process.env.VITE_ERPNEXT_URL || process.env.VITE_PROXY_TARGET || "").replace(/\/+$/, "");
-const KEY = process.env.ERP_API_KEY || process.env.VITE_API_KEY || "";
-const SECRET = process.env.ERP_API_SECRET || process.env.VITE_API_SECRET || "";
+const KEY = process.env.ERP_API_KEy || process.env.VITE_API_KEY || "";
+const SECRET = process.env.ERP_API_SECREt || process.env.VITE_API_SECRET || "";
 const AUTH = `token ${KEY}:${SECRET}`;
 
 async function erpGet(path) {

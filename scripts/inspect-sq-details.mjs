@@ -20,7 +20,7 @@ function loadEnv() {
 loadEnv();
 
 const base = (process.env.ERPNEXT_URL || process.env.VITE_ERPNEXT_URL || process.env.VITE_PROXY_TARGET || "").replace(/\/+$/, "");
-const auth = `token ${process.env.ERP_API_KEY || process.env.VITE_API_KEY}:${process.env.ERP_API_SECRET || process.env.VITE_API_SECRET}`;
+const auth = `token ${process.env.ERP_API_KEy || process.env.VITE_API_KEY}:${process.env.ERP_API_SECREt || process.env.VITE_API_SECRET}`;
 
 async function api(path) {
   const res = await fetch(`${base}${path}`, {

@@ -96,8 +96,8 @@ function readErpConfig(): ErpAdminConfig {
     process.env.VITE_PROXY_TARGET ??
     ""
   ).replace(/\/$/, "");
-  const key = process.env.ERP_API_KEY ?? process.env.VITE_API_KEY ?? "";
-  const secret = process.env.ERP_API_SECRET ?? process.env.VITE_API_SECRET ?? "";
+  const key = process.env.ERP_API_KEy ?? process.env.VITE_API_KEY ?? "";
+  const secret = process.env.ERP_API_SECREt ?? process.env.VITE_API_SECRET ?? "";
   if (!baseUrl || !key || !secret) {
     throw new RecommendSuppliersError(
       "ERPNext credentials are not configured.",

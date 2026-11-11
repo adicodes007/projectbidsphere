@@ -6,7 +6,7 @@ import { clmErpRequest, createClmDependencies } from "./clmErp";
 
 afterEach(() => { vi.restoreAllMocks(); vi.unstubAllEnvs(); mock.persist.mockReset(); });
 function setup(response: Response) {
-  vi.stubEnv("ERPNEXT_URL", "https://erp.test"); vi.stubEnv("ERP_API_KEY", "fixture-key"); vi.stubEnv("ERP_API_SECRET", "fixture-secret");
+  vi.stubEnv("ERPNEXT_URL", "https://erp.test"); vi.stubEnv("ERP_API_KEy", "fixture-key"); vi.stubEnv("ERP_API_SECREt", "fixture-secret");
   return vi.spyOn(globalThis, "fetch").mockResolvedValue(response);
 }
 describe("RFQ CLM standard ERPNext transport", () => {

@@ -30,8 +30,8 @@ const baseUrl = (
   process.env.VITE_ERPNEXT_URL ||
   ""
 ).replace(/\/+$/, "");
-const key = process.env.ERP_API_KEY || process.env.VITE_API_KEY || "";
-const secret = process.env.ERP_API_SECRET || process.env.VITE_API_SECRET || "";
+const key = process.env.ERP_API_KEy || process.env.VITE_API_KEY || "";
+const secret = process.env.ERP_API_SECREt || process.env.VITE_API_SECRET || "";
 
 async function list(doctype, filters, fields, limit = 50) {
   const url = new URL(`${baseUrl}/api/resource/${encodeURIComponent(doctype)}`);

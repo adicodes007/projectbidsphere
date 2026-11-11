@@ -24,10 +24,10 @@ export default async function handler(
     "";
   const baseUrl = raw.trim().replace(/\/+$/, "").replace(/\/api$/, "");
   const hasKey = Boolean(
-    process.env.ERP_API_KEY || process.env.VITE_API_KEY,
+    process.env.ERP_API_KEy || process.env.VITE_API_KEY,
   );
   const hasSecret = Boolean(
-    process.env.ERP_API_SECRET || process.env.VITE_API_SECRET,
+    process.env.ERP_API_SECREt || process.env.VITE_API_SECRET,
   );
 
   const report: Record<string, unknown> = {

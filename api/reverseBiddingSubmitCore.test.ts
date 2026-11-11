@@ -169,8 +169,8 @@ function orderConcurrentFirstSaves(store: ReturnType<typeof erpStore>, firstSupp
 
 beforeEach(() => {
   vi.stubEnv("ERPNEXT_URL", "https://erp.test");
-  vi.stubEnv("ERP_API_KEY", "test-key");
-  vi.stubEnv("ERP_API_SECRET", "test-secret");
+  vi.stubEnv("ERP_API_KEy", "test-key");
+  vi.stubEnv("ERP_API_SECREt", "test-secret");
   vi.spyOn(console, "info").mockImplementation(() => undefined);
   vi.spyOn(console, "log").mockImplementation(() => undefined);
   vi.spyOn(console, "warn").mockImplementation(() => undefined);

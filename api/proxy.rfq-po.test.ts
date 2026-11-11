@@ -21,8 +21,8 @@ function response() {
 beforeEach(() => {
   process.env.BIDSPHERE_SESSION_SECRET = "isolated-po-gateway-test";
   process.env.ERPNEXT_URL = "https://erp.test";
-  process.env.ERP_API_KEY = "test-key";
-  process.env.ERP_API_SECRET = "test-secret";
+  process.env.ERP_API_KEy = "test-key";
+  process.env.ERP_API_SECREt = "test-secret";
   ready.mockReset().mockResolvedValue(review);
   clmReady.mockReset().mockResolvedValue(undefined);
 });

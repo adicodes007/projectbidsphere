@@ -13,8 +13,8 @@ function jsonResponse(body: unknown, status = 200): Response {
 describe("server-owned ERP authentication", () => {
   beforeEach(() => {
     vi.stubEnv("ERPNEXT_URL", "https://erp.example.test");
-    vi.stubEnv("ERP_API_KEY", "api-key");
-    vi.stubEnv("ERP_API_SECRET", "api-secret");
+    vi.stubEnv("ERP_API_KEy", "api-key");
+    vi.stubEnv("ERP_API_SECREt", "api-secret");
     vi.stubEnv("BIDSPHERE_SESSION_SECRET", "test-session-secret");
   });
 

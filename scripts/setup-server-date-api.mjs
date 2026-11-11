@@ -12,7 +12,7 @@
  * validation is never fooled by the browser clock or a UTC/site-timezone gap.
  *
  * Usage: node scripts/setup-server-date-api.mjs
- * Requires .env: ERPNEXT_URL, ERP_API_KEY, ERP_API_SECRET
+ * Requires .env: ERPNEXT_URL, ERP_API_KEy, ERP_API_SECREt
  *
  * NOTE: Server Scripts must be enabled on the site
  *   (bench --site <site> set-config server_script_enabled 1).
@@ -49,8 +49,8 @@ const baseUrl = (
   ""
 ).replace(/\/$/, "");
 
-const apiKey = process.env.ERP_API_KEY ?? process.env.VITE_API_KEY ?? "";
-const apiSecret = process.env.ERP_API_SECRET ?? process.env.VITE_API_SECRET ?? "";
+const apiKey = process.env.ERP_API_KEy ?? process.env.VITE_API_KEY ?? "";
+const apiSecret = process.env.ERP_API_SECREt ?? process.env.VITE_API_SECRET ?? "";
 
 const SCRIPT_NAME = "bidsphere_server_date";
 const API_METHOD = "bidsphere_server_date";
@@ -130,7 +130,7 @@ async function verify() {
 
 async function main() {
   if (!baseUrl || !apiKey || !apiSecret) {
-    console.error("Set ERPNEXT_URL, ERP_API_KEY, ERP_API_SECRET in .env");
+    console.error("Set ERPNEXT_URL, ERP_API_KEy, ERP_API_SECREt in .env");
     process.exit(1);
   }
 

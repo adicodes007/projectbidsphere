@@ -267,8 +267,8 @@ describe("RFQ Purchase Order gateway approval/integrity guard", () => {
 
   it.each(["https://erp.test", "https://erp.test/", "https://erp.test/api", " https://erp.test/api/ "])("normalizes configured ERP base %s without a duplicate /api", async base => {
     vi.stubEnv("ERPNEXT_URL", base);
-    vi.stubEnv("ERP_API_KEY", "isolated-test-key");
-    vi.stubEnv("ERP_API_SECRET", "isolated-test-secret");
+    vi.stubEnv("ERP_API_KEy", "isolated-test-key");
+    vi.stubEnv("ERP_API_SECREt", "isolated-test-secret");
     const fetchMock = vi.spyOn(globalThis, "fetch").mockResolvedValue(new Response(JSON.stringify({ data: [review] }), { headers: { "Content-Type": "application/json" } }));
     await expect(listPurchaseOrderLegalReviews([["sq_name", "=", "SQ-1"]])).resolves.toEqual([review]);
     expect(new URL(String(fetchMock.mock.calls[0][0])).pathname).toBe("/api/resource/Legal%20Document%20Review");

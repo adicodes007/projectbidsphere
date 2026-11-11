@@ -59,7 +59,7 @@ describe("REST-only RFQ Contract status transport", () => {
     expect(encodeRfqClmRestContract(record("Rejected", "rejected")).custom_contract_status).toBe("Draft");
   });
   it("maps standard Contract create, load and list traffic without modifying Contract Request responses", async () => {
-    vi.stubEnv("ERPNEXT_URL", "https://rest-status.test"); vi.stubEnv("ERP_API_KEY", "fixture"); vi.stubEnv("ERP_API_SECRET", "fixture");
+    vi.stubEnv("ERPNEXT_URL", "https://rest-status.test"); vi.stubEnv("ERP_API_KEy", "fixture"); vi.stubEnv("ERP_API_SECREt", "fixture");
     const canonical = record("Pending Legal", "legal_review"), native = encodeRfqClmRestContract(canonical);
     const fetchMock = vi.spyOn(globalThis, "fetch").mockImplementation(async (input, init) => {
       const url = new URL(String(input));
@@ -77,7 +77,7 @@ describe("REST-only RFQ Contract status transport", () => {
     expect(fetchMock).toHaveBeenCalledTimes(4);
   });
   it("maps the Contract save request and response with no changes to revisions or runtime bytes", async () => {
-    vi.stubEnv("ERPNEXT_URL", "https://rest-status.test"); vi.stubEnv("ERP_API_KEY", "fixture"); vi.stubEnv("ERP_API_SECRET", "fixture");
+    vi.stubEnv("ERPNEXT_URL", "https://rest-status.test"); vi.stubEnv("ERP_API_KEy", "fixture"); vi.stubEnv("ERP_API_SECREt", "fixture");
     const canonical = { ...record("Pending Finance", "finance_review"), doctype: "Contract", modified: "2026-09-23 12:00:00.123456" };
     const fetchMock = vi.spyOn(globalThis, "fetch").mockImplementation(async (_input, init) => {
       const body = JSON.parse(String(init?.body));

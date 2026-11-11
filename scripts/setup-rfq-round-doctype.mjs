@@ -43,8 +43,8 @@ const baseUrl = (
   process.env.VITE_PROXY_TARGET ??
   ""
 ).replace(/\/+$/, "");
-const apiKey = process.env.ERP_API_KEY ?? process.env.VITE_API_KEY ?? "";
-const apiSecret = process.env.ERP_API_SECRET ?? process.env.VITE_API_SECRET ?? "";
+const apiKey = process.env.ERP_API_KEy ?? process.env.VITE_API_KEY ?? "";
+const apiSecret = process.env.ERP_API_SECREt ?? process.env.VITE_API_SECRET ?? "";
 
 // Keep in sync with RFQ_ROUND_REASON_CODES in src/api/rfqQuoteRound.ts
 const REASON_CODE_OPTIONS = [
@@ -280,7 +280,7 @@ async function ensureCustomFields() {
 
 async function main() {
   if (!baseUrl || !apiKey || !apiSecret) {
-    console.error("Set ERPNEXT_URL, ERP_API_KEY, ERP_API_SECRET in .env");
+    console.error("Set ERPNEXT_URL, ERP_API_KEy, ERP_API_SECREt in .env");
     process.exit(1);
   }
   await ensureRfqRoundItem();

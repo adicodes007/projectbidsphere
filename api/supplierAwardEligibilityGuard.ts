@@ -21,8 +21,8 @@ const unverifiable = (): never => blocked("Supplier award eligibility cannot be 
 /** Server reads are independent of any browser score, verdict or eligible flag. */
 export function createSupplierAwardEligibilityDependencies(): SupplierAwardEligibilityDependencies {
   const base = (process.env.ERPNEXT_URL || process.env.VITE_PROXY_TARGET || process.env.VITE_ERPNEXT_URL || "").trim().replace(/\/+$/, "").replace(/\/api$/, "");
-  const key = process.env.ERP_API_KEY || process.env.VITE_API_KEY;
-  const secret = process.env.ERP_API_SECRET || process.env.VITE_API_SECRET;
+  const key = process.env.ERP_API_KEy || process.env.VITE_API_KEY;
+  const secret = process.env.ERP_API_SECREt || process.env.VITE_API_SECRET;
   const read = async (path: string): Promise<unknown> => {
     if (!base || !key || !secret) return blocked("Cannot verify supplier award eligibility: ERP is not configured.");
     const response = await fetch(`${base}/api/${path}`, {

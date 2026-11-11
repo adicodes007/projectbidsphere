@@ -55,7 +55,7 @@ async function endpoint(req: VercelRequest, accessToken?: string, query: Record<
 describe("supplier negotiation supporting-document upload", () => {
   beforeEach(() => {
     vi.clearAllMocks(); vi.stubEnv("BIDSPHERE_SESSION_SECRET", "fixture-only-supplier-upload-secret");
-    vi.stubEnv("ERPNEXT_URL", "https://clm-upload.test"); vi.stubEnv("ERP_API_KEY", "fixture-key"); vi.stubEnv("ERP_API_SECRET", "fixture-secret");
+    vi.stubEnv("ERPNEXT_URL", "https://clm-upload.test"); vi.stubEnv("ERP_API_KEy", "fixture-key"); vi.stubEnv("ERP_API_SECREt", "fixture-secret");
   });
   afterEach(() => { vi.restoreAllMocks(); vi.unstubAllEnvs(); });
 

@@ -141,7 +141,7 @@ describe("GET /api/clm Contract Request list and detail with native ERP fixtures
   beforeEach(() => {
     vi.stubEnv("BIDSPHERE_SESSION_SECRET", "projection-test-only-session-secret");
     vi.stubEnv("ERPNEXT_URL", "https://rfq-request-projection.test");
-    vi.stubEnv("ERP_API_KEY", "fixture-key"); vi.stubEnv("ERP_API_SECRET", "fixture-secret");
+    vi.stubEnv("ERP_API_KEy", "fixture-key"); vi.stubEnv("ERP_API_SECREt", "fixture-secret");
   });
   afterEach(() => { vi.restoreAllMocks(); vi.unstubAllEnvs(); });
 

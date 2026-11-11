@@ -499,9 +499,9 @@ function erpServerDateDevMiddleware(): Plugin {
             ""
           ).replace(/\/$/, "");
           const apiKey =
-            process.env.ERP_API_KEY || process.env.VITE_API_KEY || "";
+            process.env.ERP_API_KEy || process.env.VITE_API_KEY || "";
           const apiSecret =
-            process.env.ERP_API_SECRET || process.env.VITE_API_SECRET || "";
+            process.env.ERP_API_SECREt || process.env.VITE_API_SECRET || "";
           const result = await core.resolveErpServerDate({
             baseUrl,
             apiKey,
@@ -2517,8 +2517,8 @@ function payablesRbacDevMiddleware(): Plugin {
             });
 
             const base = String(process.env.ERPNEXT_URL || "").replace(/\/+$/, "");
-            const key = process.env.ERP_API_KEY || "";
-            const secret = process.env.ERP_API_SECRET || "";
+            const key = process.env.ERP_API_KEy || "";
+            const secret = process.env.ERP_API_SECREt || "";
             const loadUploadTarget = async () => {
               const response = await fetch(
                 `${base}/api/resource/${encodeURIComponent(upload.doctype)}/${encodeURIComponent(upload.docname)}`,
@@ -2747,8 +2747,8 @@ function payablesRbacDevMiddleware(): Plugin {
             body.reference_doctype === "Purchase Requisition";
 
           const base = String(process.env.ERPNEXT_URL || "").replace(/\/+$/, "");
-          const key = process.env.ERP_API_KEY || "";
-          const secret = process.env.ERP_API_SECRET || "";
+          const key = process.env.ERP_API_KEy || "";
+          const secret = process.env.ERP_API_SECREt || "";
           const loadErpDocument = async (
             doctype: string,
             documentName: string,
@@ -3786,8 +3786,8 @@ export default defineConfig(({ mode }) => {
     env.ERPNEXT_URL ||
     "http://localhost:8081"
   ).replace(/\/+$/, "");
-  const erpApiKey = env.ERP_API_KEY || env.VITE_API_KEY || "";
-  const erpApiSecret = env.ERP_API_SECRET || env.VITE_API_SECRET || "";
+  const erpApiKey = env.ERP_API_KEy || env.VITE_API_KEY || "";
+  const erpApiSecret = env.ERP_API_SECREt || env.VITE_API_SECRET || "";
 
   console.log(`[vite] ERP proxy target → ${proxyTarget}`);
 
@@ -3795,8 +3795,8 @@ export default defineConfig(({ mode }) => {
   // how Vercel injects real environment variables in production) — mirror
   // that here so the dev middleware above behaves identically.
   process.env.ERPNEXT_URL = process.env.ERPNEXT_URL || proxyTarget;
-  process.env.ERP_API_KEY = process.env.ERP_API_KEY || erpApiKey;
-  process.env.ERP_API_SECRET = process.env.ERP_API_SECRET || erpApiSecret;
+  process.env.ERP_API_KEy = process.env.ERP_API_KEy || erpApiKey;
+  process.env.ERP_API_SECREt = process.env.ERP_API_SECREt || erpApiSecret;
   process.env.BIDSPHERE_SESSION_SECRET =
     process.env.BIDSPHERE_SESSION_SECRET ||
     env.BIDSPHERE_SESSION_SECRET ||

@@ -32,8 +32,8 @@ function loadEnv() {
 }
 loadEnv();
 const BASE = (process.env.ERPNEXT_URL ?? process.env.VITE_ERPNEXT_URL ?? process.env.VITE_PROXY_TARGET ?? "").replace(/\/+$/, "");
-const KEY = process.env.ERP_API_KEY ?? process.env.VITE_API_KEY ?? "";
-const SEC = process.env.ERP_API_SECRET ?? process.env.VITE_API_SECRET ?? "";
+const KEY = process.env.ERP_API_KEy ?? process.env.VITE_API_KEY ?? "";
+const SEC = process.env.ERP_API_SECREt ?? process.env.VITE_API_SECRET ?? "";
 if (!BASE||!KEY||!SEC) { console.error("Missing env"); process.exit(1); }
 const WORKFLOW_SERVICE_ROLE = (
   process.env.ECR_WORKFLOW_SERVICE_ROLE ?? "BidSphere ECR Workflow Service"

@@ -105,7 +105,7 @@ const SUPPLIER_TTL_MS = 7 * 24 * 60 * 60 * 1000;
 function sessionSecret(): string {
   return (
     process.env.BIDSPHERE_SESSION_SECRET ||
-    process.env.ERP_API_SECRET ||
+    process.env.ERP_API_SECREt ||
     process.env.VITE_API_SECRET ||
     "bidsphere-dev-session-secret"
   );

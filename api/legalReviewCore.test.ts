@@ -80,7 +80,7 @@ describe("backend-owned legal review and exact-version signature workflow", () =
   beforeEach(async () => {
     vi.stubEnv("BIDSPHERE_SESSION_SECRET", "isolated-legal-workflow-tests-only");
     vi.stubEnv("ERPNEXT_URL", "https://erp.test");
-    vi.stubEnv("ERP_API_KEY", "fixture-key"); vi.stubEnv("ERP_API_SECRET", "fixture-secret");
+    vi.stubEnv("ERP_API_KEy", "fixture-key"); vi.stubEnv("ERP_API_SECREt", "fixture-secret");
     revision = 1; dropField = ""; failUpload = false; ambiguousUpload = false; uploadCount = 0;
     review = { name: "LDR-TEST", sq_name: "SQ-TEST", rfq_name: "RFQ-TEST", supplier: "Fixture Supplier", modified: "revision-1",
       owner: "Administrator", procurement_manager: "procurement@example.test",

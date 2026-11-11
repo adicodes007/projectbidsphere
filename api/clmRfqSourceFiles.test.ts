@@ -48,7 +48,7 @@ async function call(accessToken: string, fileId = "TERMS", view = "file") {
 describe("Contract-scoped RFQ supporting document access", () => {
   beforeEach(() => {
     vi.stubEnv("BIDSPHERE_SESSION_SECRET", "rfq-source-fixture-secret");
-    vi.stubEnv("ERPNEXT_URL", "https://clm-source.test"); vi.stubEnv("ERP_API_KEY", "fixture-key"); vi.stubEnv("ERP_API_SECRET", "fixture-secret");
+    vi.stubEnv("ERPNEXT_URL", "https://clm-source.test"); vi.stubEnv("ERP_API_KEy", "fixture-key"); vi.stubEnv("ERP_API_SECREt", "fixture-secret");
   });
   afterEach(() => { vi.restoreAllMocks(); vi.unstubAllEnvs(); });
 

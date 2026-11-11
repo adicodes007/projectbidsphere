@@ -9,7 +9,7 @@
  *
  * Prerequisites:
  *   1. Run `node scripts/setup-rfq-template.mjs` first to create DocTypes.
- *   2. .env must have ERPNEXT_URL, ERP_API_KEY, ERP_API_SECRET.
+ *   2. .env must have ERPNEXT_URL, ERP_API_KEy, ERP_API_SECREt.
  */
 import { readFileSync, existsSync } from "node:fs";
 import { resolve, dirname } from "node:path";
@@ -43,9 +43,9 @@ const baseUrl = (
   ""
 ).replace(/\/$/, "");
 
-const apiKey = process.env.ERP_API_KEY ?? process.env.VITE_API_KEY ?? "";
+const apiKey = process.env.ERP_API_KEy ?? process.env.VITE_API_KEY ?? "";
 const apiSecret =
-  process.env.ERP_API_SECRET ?? process.env.VITE_API_SECRET ?? "";
+  process.env.ERP_API_SECREt ?? process.env.VITE_API_SECRET ?? "";
 
 /* ── HTTP helper ────────────────────────────────────────────────────────── */
 

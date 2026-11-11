@@ -6,7 +6,7 @@
  *
  * Requires env:
  *   ERPNEXT_URL or VITE_ERPNEXT_URL
- *   ERP_API_KEY, ERP_API_SECRET
+ *   ERP_API_KEy, ERP_API_SECREt
  *   ROLE_USER_PASSWORD (default: Netlink@2026)
  */
 import { readFileSync, existsSync } from "node:fs";
@@ -39,8 +39,8 @@ const baseUrl = (
   ""
 ).replace(/\/$/, "");
 
-const apiKey = process.env.ERP_API_KEY ?? process.env.VITE_API_KEY ?? "";
-const apiSecret = process.env.ERP_API_SECRET ?? process.env.VITE_API_SECRET ?? "";
+const apiKey = process.env.ERP_API_KEy ?? process.env.VITE_API_KEY ?? "";
+const apiSecret = process.env.ERP_API_SECREt ?? process.env.VITE_API_SECRET ?? "";
 const password = process.env.ROLE_USER_PASSWORD ?? "Netlink@2026";
 
 const USERS = [

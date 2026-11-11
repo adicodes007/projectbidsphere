@@ -102,7 +102,7 @@ describe("persisted RFQ initial Contract Request assignment", () => {
 });
 
 describe("ERP-backed Contract Request queue membership", () => {
-  beforeEach(() => { vi.stubEnv("BIDSPHERE_SESSION_SECRET", "rfq-request-routing-fixture-secret"); vi.stubEnv("ERPNEXT_URL", "https://request-queue.test"); vi.stubEnv("ERP_API_KEY", "fixture"); vi.stubEnv("ERP_API_SECRET", "fixture"); });
+  beforeEach(() => { vi.stubEnv("BIDSPHERE_SESSION_SECRET", "rfq-request-routing-fixture-secret"); vi.stubEnv("ERPNEXT_URL", "https://request-queue.test"); vi.stubEnv("ERP_API_KEy", "fixture"); vi.stubEnv("ERP_API_SECREt", "fixture"); });
   afterEach(() => { vi.restoreAllMocks(); vi.unstubAllEnvs(); });
   it("returns saved award requests to Manager and Team, hides pre-award requests and excludes Legal/Finance", async () => {
     const records = [request(), initialRequest(), awardedRequest(), { name: "CR-STANDALONE", request_status: "Pending Review" }];

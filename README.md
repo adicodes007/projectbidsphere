@@ -161,8 +161,8 @@ Production (and Preview if used):
 | Variable | Example | Notes |
 | --- | --- | --- |
 | `ERPNEXT_URL` | `http://80.225.204.210:8090` | Must be reachable from Vercel’s servers (public). Not `localhost`. |
-| `ERP_API_KEY` | *(from ERPNext User → API Access)* | Server-only; used by `/api/proxy`. |
-| `ERP_API_SECRET` | *(same)* | Server-only. |
+| `ERP_API_KEy` | *(from ERPNext User → API Access)* | Server-only; used by `/api/proxy`. |
+| `ERP_API_SECREt` | *(same)* | Server-only. |
 
 Login hits `POST /api/auth/login` (serverless `api/auth-login.ts`), which
 validates the password against ERPNext **without** forwarding `Set-Cookie`.

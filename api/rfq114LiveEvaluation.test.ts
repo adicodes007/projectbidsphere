@@ -17,7 +17,7 @@ describe("Live AI Evaluation for PUR-RFQ-2026-00114", () => {
     }
 
     const erpUrl = (env.VITE_ERPNEXT_URL || "http://localhost:8081").replace(/\/+$/, "");
-    const authHeader = `token ${env.ERP_API_KEY}:${env.ERP_API_SECRET}`;
+    const authHeader = `token ${env.ERP_API_KEy}:${env.ERP_API_SECREt}`;
 
     // 2. Fetch RFQ
     const rfqRes = await fetch(`${erpUrl}/api/resource/Request for Quotation/PUR-RFQ-2026-00114`, {

@@ -107,7 +107,7 @@ describe("Contract Request requirements at the ERP persistence boundary", () => 
 describe("real ERP adapter Contract Request enforcement", () => {
   afterEach(() => { vi.restoreAllMocks(); vi.unstubAllEnvs(); });
   const setup = (hasAward = true) => {
-    vi.stubEnv("ERPNEXT_URL", "https://erp.test"); vi.stubEnv("ERP_API_KEY", "test-key"); vi.stubEnv("ERP_API_SECRET", "test-secret");
+    vi.stubEnv("ERPNEXT_URL", "https://erp.test"); vi.stubEnv("ERP_API_KEy", "test-key"); vi.stubEnv("ERP_API_SECREt", "test-secret");
     const review = { name: "AWARD-95", rfq_name: "RFQ-95", sq_name: "SQ-95", supplier: "SUP-1", grand_total: 48500, workflow_state: "Pending Review" };
     const docs: Record<string, ClmRecord> = { "Request for Quotation": rfq, "Legal Document Review": review, "Supplier Quotation": { name: "SQ-95", docstatus: 1, supplier: "SUP-1", company: "Netlink", currency: "USD", grand_total: 50000, items: [{ request_for_quotation: "RFQ-95" }] }, Supplier: { name: "SUP-1", disabled: 0 } };
     return vi.spyOn(globalThis, "fetch").mockImplementation(async (url, init) => {

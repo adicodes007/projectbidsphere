@@ -241,7 +241,7 @@ describe("REST RFQ Contract lifecycle mirrors", () => {
   it("integrates standard REST mirrors after the real Contract save and preserves microsecond revisions", async () => {
     const m = fixture();
     m.docs["Contract/CON-95"] = encodeRfqClmRestContract(m.saved);
-    vi.stubEnv("ERPNEXT_URL", "https://rest-sync.test"); vi.stubEnv("ERP_API_KEY", "fixture"); vi.stubEnv("ERP_API_SECRET", "fixture");
+    vi.stubEnv("ERPNEXT_URL", "https://rest-sync.test"); vi.stubEnv("ERP_API_KEy", "fixture"); vi.stubEnv("ERP_API_SECREt", "fixture");
     const transport = vi.spyOn(globalThis, "fetch").mockImplementation(async (input, init) => {
       const url = new URL(String(input)), path = decodeURIComponent(url.pathname).replace(/^\/api\//, "");
       if (url.origin !== "https://rest-sync.test") throw new Error("Unexpected nonfixture host");

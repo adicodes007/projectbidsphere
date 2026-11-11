@@ -98,8 +98,8 @@ describe("POST /api/file-link-copy", () => {
   beforeEach(() => {
     process.env.BIDSPHERE_SESSION_SECRET = "file-link-copy-route-test-secret";
     process.env.ERPNEXT_URL = "https://erp.test";
-    process.env.ERP_API_KEY = "service-key";
-    process.env.ERP_API_SECRET = "service-secret";
+    process.env.ERP_API_KEy = "service-key";
+    process.env.ERP_API_SECREt = "service-secret";
   });
 
   afterEach(() => {

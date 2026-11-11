@@ -34,11 +34,11 @@ const baseUrl = (
   process.env.VITE_PROXY_TARGET ??
   ""
 ).replace(/\/+$/, "");
-const apiKey = process.env.ERP_API_KEY ?? process.env.VITE_API_KEY ?? "";
-const apiSecret = process.env.ERP_API_SECRET ?? process.env.VITE_API_SECRET ?? "";
+const apiKey = process.env.ERP_API_KEy ?? process.env.VITE_API_KEY ?? "";
+const apiSecret = process.env.ERP_API_SECREt ?? process.env.VITE_API_SECRET ?? "";
 
 if (!baseUrl || !apiKey || !apiSecret) {
-  console.error("Missing ERPNEXT_URL / ERP_API_KEY / ERP_API_SECRET");
+  console.error("Missing ERPNEXT_URL / ERP_API_KEy / ERP_API_SECREt");
   process.exit(1);
 }
 

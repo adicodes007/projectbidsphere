@@ -9,8 +9,8 @@ describe("stockCheckCore validation and execution", () => {
   beforeEach(() => {
     vi.clearAllMocks();
     process.env.ERPNEXT_URL = "http://erp.test:8090";
-    process.env.ERP_API_KEY = "test_key";
-    process.env.ERP_API_SECRET = "test_secret";
+    process.env.ERP_API_KEy = "test_key";
+    process.env.ERP_API_SECREt = "test_secret";
   });
 
   it("successfully performs stock check for valid company Bidsphere warehouses", async () => {

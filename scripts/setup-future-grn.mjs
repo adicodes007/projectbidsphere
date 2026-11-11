@@ -11,7 +11,7 @@
  *
  * Requires .env:
  *   ERPNEXT_URL or VITE_ERPNEXT_URL
- *   ERP_API_KEY, ERP_API_SECRET
+ *   ERP_API_KEy, ERP_API_SECREt
  *
  * If Server Scripts are disabled on your instance, run FIRST:
  *   bench --site <sitename> set-config server_script_enabled 1
@@ -49,9 +49,9 @@ const baseUrl = (
   ""
 ).replace(/\/$/, "");
 
-const apiKey = process.env.ERP_API_KEY ?? process.env.VITE_API_KEY ?? "";
+const apiKey = process.env.ERP_API_KEy ?? process.env.VITE_API_KEY ?? "";
 const apiSecret =
-  process.env.ERP_API_SECRET ?? process.env.VITE_API_SECRET ?? "";
+  process.env.ERP_API_SECREt ?? process.env.VITE_API_SECRET ?? "";
 
 /* ── HTTP helper ────────────────────────────────────────────────────────── */
 

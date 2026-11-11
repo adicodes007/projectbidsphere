@@ -31,9 +31,9 @@ export default async function handler(
   }
 
   const baseUrl = erpBaseUrl();
-  const apiKey = process.env.ERP_API_KEY ?? process.env.VITE_API_KEY ?? "";
+  const apiKey = process.env.ERP_API_KEy ?? process.env.VITE_API_KEY ?? "";
   const apiSecret =
-    process.env.ERP_API_SECRET ?? process.env.VITE_API_SECRET ?? "";
+    process.env.ERP_API_SECREt ?? process.env.VITE_API_SECRET ?? "";
 
   if (!baseUrl || !apiKey || !apiSecret) {
     res.status(500).json({

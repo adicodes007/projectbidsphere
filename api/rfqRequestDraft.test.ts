@@ -198,7 +198,7 @@ describe("Procurement partial awarded RFQ Request draft", () => {
   });
 
   it("uses native frappe.client.save with the original revision and verifies the persisted draft through a fresh ERP GET", async () => {
-    const m = fixture(); vi.stubEnv("ERPNEXT_URL", "https://request-draft-erp.test"); vi.stubEnv("ERP_API_KEY", "fixture-key"); vi.stubEnv("ERP_API_SECRET", "fixture-secret");
+    const m = fixture(); vi.stubEnv("ERPNEXT_URL", "https://request-draft-erp.test"); vi.stubEnv("ERP_API_KEy", "fixture-key"); vi.stubEnv("ERP_API_SECREt", "fixture-secret");
     const calls: Array<{ method: string; route: string; body?: ClmRecord }> = [];
     vi.spyOn(globalThis, "fetch").mockImplementation(async (input, init) => {
       const url = new URL(String(input)); if (url.origin !== "https://request-draft-erp.test") throw new Error("Fixture-only network");
@@ -219,7 +219,7 @@ describe("Procurement partial awarded RFQ Request draft", () => {
   });
 
   it.each(["procurement", "procurement_team"] as AppRole[])("returns %s projected draft details and capability from the real HTTP handler and canonical detail re-fetch", async role => {
-    const m = fixture(); vi.stubEnv("ERPNEXT_URL", "https://request-draft-erp.test"); vi.stubEnv("ERP_API_KEY", "fixture-key"); vi.stubEnv("ERP_API_SECRET", "fixture-secret");
+    const m = fixture(); vi.stubEnv("ERPNEXT_URL", "https://request-draft-erp.test"); vi.stubEnv("ERP_API_KEy", "fixture-key"); vi.stubEnv("ERP_API_SECREt", "fixture-secret");
     const mutations: string[] = [];
     vi.spyOn(globalThis, "fetch").mockImplementation(async (input, init) => {
       const url = new URL(String(input)); if (url.origin !== "https://request-draft-erp.test") throw new Error("Fixture-only network");

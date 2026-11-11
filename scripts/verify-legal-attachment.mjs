@@ -9,11 +9,11 @@ import { PDFDocument } from "pdf-lib";
 
 const env = loadEnv("development", process.cwd(), "");
 process.env.ERPNEXT_URL ||= env.ERPNEXT_URL || env.VITE_ERPNEXT_URL || env.VITE_PROXY_TARGET;
-process.env.ERP_API_KEY ||= env.ERP_API_KEY || env.VITE_API_KEY;
-process.env.ERP_API_SECRET ||= env.ERP_API_SECRET || env.VITE_API_SECRET;
+process.env.ERP_API_KEy ||= env.ERP_API_KEy || env.VITE_API_KEY;
+process.env.ERP_API_SECREt ||= env.ERP_API_SECREt || env.VITE_API_SECRET;
 const base = process.env.ERPNEXT_URL?.replace(/\/+$/, "").replace(/\/api$/, "");
-if (!base || !process.env.ERP_API_KEY || !process.env.ERP_API_SECRET) throw new Error("ERP configuration missing.");
-const headers = { Authorization: `token ${process.env.ERP_API_KEY}:${process.env.ERP_API_SECRET}`, Accept: "application/json" };
+if (!base || !process.env.ERP_API_KEy || !process.env.ERP_API_SECREt) throw new Error("ERP configuration missing.");
+const headers = { Authorization: `token ${process.env.ERP_API_KEy}:${process.env.ERP_API_SECREt}`, Accept: "application/json" };
 const loadDocument = async (doctype, name) => {
   const response = await fetch(`${base}/api/resource/${encodeURIComponent(doctype)}/${encodeURIComponent(name)}`, { headers, signal: AbortSignal.timeout(15000) });
   if (!response.ok) throw Object.assign(new Error("Document lookup failed."), { status: response.status });
@@ -52,7 +52,7 @@ try {
   }
   if (!selected) throw new Error("No authorized File resolved.");
   const result = await fetchErpFile({ baseUrl: base, filePath: requestedPath, fileId: selected.name,
-    apiKey: process.env.ERP_API_KEY, apiSecret: process.env.ERP_API_SECRET,
+    apiKey: process.env.ERP_API_KEy, apiSecret: process.env.ERP_API_SECREt,
     authorizeFile: async file => {
       if (!await authorizeLegalFileIfApplicable({ principal: legal, file, loadDocument })) throw new Error("CLM authorization was not applied.");
     },

@@ -3,7 +3,7 @@
  *
  * Usage: node scripts/setup-item-master-procurement.mjs
  *
- * Requires .env: ERPNEXT_URL, ERP_API_KEY, ERP_API_SECRET
+ * Requires .env: ERPNEXT_URL, ERP_API_KEy, ERP_API_SECREt
  */
 import { readFileSync, existsSync } from "node:fs";
 import { resolve, dirname } from "node:path";
@@ -35,8 +35,8 @@ const baseUrl = (
   ""
 ).replace(/\/$/, "");
 
-const apiKey = process.env.ERP_API_KEY ?? process.env.VITE_API_KEY ?? "";
-const apiSecret = process.env.ERP_API_SECRET ?? process.env.VITE_API_SECRET ?? "";
+const apiKey = process.env.ERP_API_KEy ?? process.env.VITE_API_KEY ?? "";
+const apiSecret = process.env.ERP_API_SECREt ?? process.env.VITE_API_SECRET ?? "";
 
 const STOCK_MANAGER = "Stock Manager";
 const PURCHASE_MANAGER = "Purchase Manager";
@@ -188,7 +188,7 @@ async function ensureDocPerm(role, parent, perms) {
 
 async function main() {
   if (!baseUrl || !apiKey || !apiSecret) {
-    console.error("Missing ERPNEXT_URL / ERP_API_KEY / ERP_API_SECRET in .env");
+    console.error("Missing ERPNEXT_URL / ERP_API_KEy / ERP_API_SECREt in .env");
     process.exit(1);
   }
 

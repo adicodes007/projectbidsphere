@@ -78,8 +78,8 @@ describe("RFQ metadata forwarding through the production authenticated proxy", (
     routing.ensure.mockReset().mockResolvedValue({ required: false });
     vi.stubEnv("BIDSPHERE_SESSION_SECRET", "isolated-rfq-contract-metadata-test");
     vi.stubEnv("ERPNEXT_URL", "https://erp.test");
-    vi.stubEnv("ERP_API_KEY", "test-key");
-    vi.stubEnv("ERP_API_SECRET", "test-secret");
+    vi.stubEnv("ERP_API_KEy", "test-key");
+    vi.stubEnv("ERP_API_SECREt", "test-secret");
   });
   afterEach(() => { vi.restoreAllMocks(); vi.unstubAllEnvs(); });
 

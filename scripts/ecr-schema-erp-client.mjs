@@ -9,8 +9,8 @@ export function createEcrSchemaErpClient() {
     if (match && !process.env[match[1]]) process.env[match[1]] = match[2].replace(/^(['"])(.*)\1$/, "$2");
   }
   const base = (process.env.ERPNEXT_URL ?? process.env.VITE_PROXY_TARGET ?? process.env.VITE_ERPNEXT_URL ?? "").replace(/\/+$/, "").replace(/\/api$/, "");
-  const key = process.env.ERP_API_KEY ?? process.env.VITE_API_KEY;
-  const secret = process.env.ERP_API_SECRET ?? process.env.VITE_API_SECRET;
+  const key = process.env.ERP_API_KEy ?? process.env.VITE_API_KEY;
+  const secret = process.env.ERP_API_SECREt ?? process.env.VITE_API_SECRET;
   if (!base || !key || !secret) throw new Error("Missing ERPNext URL or API credentials.");
   return async (method, path, body) => {
     const response = await fetch(`${base}/api/${path}`, {

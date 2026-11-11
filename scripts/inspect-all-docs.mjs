@@ -1,6 +1,6 @@
 const ERP_URL = process.env.VITE_ERP_BASE_URL || "http://80.225.204.210:8090";
-const ERP_KEY = process.env.VITE_ERP_API_KEY || "";
-const ERP_SECRET = process.env.VITE_ERP_API_SECRET || "";
+const ERP_KEY = process.env.VITE_ERP_API_KEy || "";
+const ERP_SECRET = process.env.VITE_ERP_API_SECREt || "";
 
 async function main() {
   const ldcRes = await fetch(`${ERP_URL}/api/resource/Legal Document Review/LDC2026-00021`, {

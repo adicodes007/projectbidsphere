@@ -1266,7 +1266,7 @@ function friendlyErrorMessage(
   //     auth without CSRF.
   if (data?.exc_type === "CSRFTokenError") {
     return devOr(
-      "Authentication error. Check ERP_API_KEY and ERP_API_SECRET in .env."
+      "Authentication error. Check ERP_API_KEy and ERP_API_SECREt in .env."
     );
   }
 

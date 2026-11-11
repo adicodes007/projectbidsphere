@@ -46,8 +46,8 @@ describe("authenticated CLM file endpoint (isolated test sessions and ERP fixtur
   beforeEach(() => {
     vi.stubEnv("BIDSPHERE_SESSION_SECRET", "legal-file-test-only-secret");
     vi.stubEnv("ERPNEXT_URL", "https://erp.test");
-    vi.stubEnv("ERP_API_KEY", "test-key");
-    vi.stubEnv("ERP_API_SECRET", "test-secret");
+    vi.stubEnv("ERP_API_KEy", "test-key");
+    vi.stubEnv("ERP_API_SECREt", "test-secret");
   });
   afterEach(() => { vi.restoreAllMocks(); vi.unstubAllEnvs(); });
 
